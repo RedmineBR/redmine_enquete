@@ -1,0 +1,9 @@
+<h2>Perguntas</h2>
+
+<% @perguntas.each do |pergunta| %>
+  <p>
+  <%= pergunta.pergunta %>
+  <%= link_to 'Sim', { :action => 'votar', :id => pergunta[:id], :resposta => 'sim' }, :method => :post %> (<%= pergunta.sim %>) /
+  <%= link_to 'Não', { :action => 'votar', :id => pergunta[:id], :resposta => 'nao' }, :method => :post %> (<%= pergunta.nao %>)
+  </p>
+<% end %>
